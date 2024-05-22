@@ -3,6 +3,10 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
+# Nous allons installer toutes les dépendances définies dans le fichier requirements.txt en étendant l'image airflow 
+# appelé extending_airflow:latest
+
+
 default_args = {
     'owner': 'x99155',
     'retries': 5,

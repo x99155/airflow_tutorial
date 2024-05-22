@@ -40,7 +40,7 @@ version: '3'
 x-airflow-common:
   &airflow-common
   build: .
-  image: ${AIRFLOW_IMAGE_NAME:-extending_airflow:latest}
+  image: ${AIRFLOW_IMAGE_NAME:-extending_airflow:latest} # on précise que l'image est construite à partir du Dockerfile qu'on a nommé extended_airflow:latest
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
