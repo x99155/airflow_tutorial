@@ -24,7 +24,8 @@ def pull_function(**kwargs):
     print(f"Valeur tirée : {value}")
 
 
-
+# Le paramètre provide_context=True est extrêmement utile dans Apache Airflow 
+# pour accéder à des informations contextuelles détaillées sur l'exécution de la tâche
 with DAG(
     dag_id='how_to_use_xcom',
     default_args=default_args,
@@ -35,7 +36,7 @@ with DAG(
     push_task = PythonOperator(
         task_id='push_task',
         python_callable=push_function,
-        provide_context=True
+        provide_context=True # Activation du paramètre provide_context
     )
 
     pull_task = PythonOperator(
